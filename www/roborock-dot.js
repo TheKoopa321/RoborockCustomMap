@@ -34,7 +34,7 @@ class RoborockDot extends HTMLElement {
     if (!this._hass || !this._config || !this.shadowRoot) return;
 
     const vacuumState = this._hass.states[this._config.entity_vacuum]?.state;
-    const active = ["cleaning", "returning"].includes(vacuumState);
+    const active = ["cleaning", "returning", "manual"].includes(vacuumState);
 
     this.style.display = active ? "block" : "none";
     if (!active) return;
